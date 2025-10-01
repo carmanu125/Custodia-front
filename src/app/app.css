@@ -1,0 +1,106 @@
+/* .banner {
+  width: 100%;
+  height: 250px;           /* o la altura que quieras */
+  /*display: flex;
+  justify-content: center; /* centrado horizontal */
+  /*align-items: center;     /* centrado vertical */
+  /*background-color: #f5f5f5; /* opcional, color de fondo en caso de espacios */
+/*}
+
+.banner img {
+  max-width: 100%;   /* nunca supera el ancho */
+  /*max-height: 100%;  /* nunca supera el alto */
+  /*object-fit: contain; /* se ajusta sin recortar */
+/*} */
+
+.banner {
+  width: 100%;              /* ocupar todo el ancho */
+  height: 250px;            /* ajusta la altura según lo que necesites */
+  overflow: hidden;         /* oculta lo que sobresalga */
+  display: flex;            /* usamos flex para centrar */
+  justify-content: center;  /* centrar horizontalmente */
+  align-items: center;      /* centrar verticalmente */
+}
+
+.banner img {
+  width: 100%;              /* se ajusta al ancho del contenedor */
+  height: 100%;             /* se ajusta a la altura del contenedor */
+  object-fit: cover;        /* recorta la imagen manteniendo proporción */
+  object-position: center;  /* la centra en caso de recorte */
+}
+
+
+
+/* 🔹 Navbar principal */
+.navbar {
+  background-color: #00527C;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  position: relative;
+}
+
+/* 🔹 Título */
+.app-title {
+  font-size: 20px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* 🔹 Botón hamburguesa */
+.menu-button {
+  display: none;
+  color: white;
+  margin-right: 8px;
+}
+
+/* 🔹 Links en pantallas grandes */
+.nav-links {
+  display: flex;
+  gap: 32px;
+  margin: 0 auto;
+}
+
+.nav-links a {
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+/* 🔹 Estilos responsivos */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 56px; /* altura del toolbar */
+    left: 0;
+    right: 0;
+    background-color: #00527C;
+    padding: 12px 0;
+    margin: 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-button {
+    display: inline-flex;
+  }
+}
+
+/* 🔹 Contenido principal */
+.main-content {
+  padding: 20px;
+  background-color: white;
+  min-height: calc(100vh - 64px);
+}

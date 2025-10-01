@@ -1,0 +1,12 @@
+<h2>Crear Vigencia</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  
+
+  <div>
+    <label>Año:</label>
+    <input type="number" formControlName="anio" />
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Guardar</button>
+</form>
