@@ -1,106 +1,136 @@
-/* .banner {
-  width: 100%;
-  height: 250px;           /* o la altura que quieras */
-  /*display: flex;
-  justify-content: center; /* centrado horizontal */
-  /*align-items: center;     /* centrado vertical */
-  /*background-color: #f5f5f5; /* opcional, color de fondo en caso de espacios */
-/*}
-
-.banner img {
-  max-width: 100%;   /* nunca supera el ancho */
-  /*max-height: 100%;  /* nunca supera el alto */
-  /*object-fit: contain; /* se ajusta sin recortar */
-/*} */
-
-.banner {
-  width: 100%;              /* ocupar todo el ancho */
-  height: 250px;            /* ajusta la altura según lo que necesites */
-  overflow: hidden;         /* oculta lo que sobresalga */
-  display: flex;            /* usamos flex para centrar */
-  justify-content: center;  /* centrar horizontalmente */
-  align-items: center;      /* centrar verticalmente */
+.sidenav-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.banner img {
-  width: 100%;              /* se ajusta al ancho del contenedor */
-  height: 100%;             /* se ajusta a la altura del contenedor */
-  object-fit: cover;        /* recorta la imagen manteniendo proporción */
-  object-position: center;  /* la centra en caso de recorte */
+.sidenav {
+  width: 220px;
+  background: #00527C;
+  color: white;
 }
 
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  font-weight: bold;
+}
 
+.mat-nav-list a {
+  color: white;
+}
 
-/* 🔹 Navbar principal */
-.navbar {
+.mat-nav-list a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Barra superior fija */
+.topbar {
   background-color: #00527C;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 64px; /* altura estándar del mat-toolbar */
+  display: flex;
+  align-items: center;
+  color:white;
+}
+
+.app-title {
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.topbar .mat-icon {
+  color: white;
+}
+
+/* Contenido principal ajustado entre header y footer */
+.main-content {
+  flex: 1;
+  padding: 1rem;
+  background: #f4f6f9;
+  margin-top: 64px;  /* deja espacio para la barra fija */
+  margin-bottom: 48px; /* deja espacio para el footer fijo */
+  overflow-y: auto;
+}
+
+/* Footer fijo */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: #00527C;
   color: white;
   display: flex;
   align-items: center;
-  padding: 0 16px;
-  position: relative;
+  padding: 0 1rem;
+  font-size: 0.8rem;
+  justify-content: space-between;
+  z-index: 1000;
 }
 
-/* 🔹 Título */
-.app-title {
-  font-size: 20px;
+/* Fuerza texto e íconos blancos en toda la barra lateral */
+.sidenav,
+.sidenav a,
+.sidenav .mat-icon,
+.sidenav .mat-list-item,
+.sidenav .mat-list-item .mat-line,
+.sidenav .mat-list-item span {
+  color: white !important;
+  fill: white !important;
+}
+
+/* Efecto hover */
+.sidenav a:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Elimina el color por defecto de Angular Material */
+.sidenav .mat-list-item-content {
+  color: inherit !important;
+}
+
+/* Ítem activo */
+.sidenav a.active {
+  background: rgba(255, 255, 255, 0.3) !important;
   font-weight: bold;
-  flex-shrink: 0;
 }
 
-/* 🔹 Botón hamburguesa */
-.menu-button {
-  display: none;
-  color: white;
-  margin-right: 8px;
+/* Hover más sutil */
+.sidenav a:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
 }
 
-/* 🔹 Links en pantallas grandes */
-.nav-links {
-  display: flex;
-  gap: 32px;
-  margin: 0 auto;
+/* --- Sidebar: forzar texto e íconos blancos --- */
+.sidenav .mat-mdc-list-item {
+  color: white !important;
 }
 
-.nav-links a {
-  color: white;
-  font-weight: 500;
-  font-size: 18px;
-  text-decoration: none;
+.sidenav .mat-mdc-list-item .mdc-list-item__primary-text,
+.sidenav .mat-mdc-list-item .mat-icon {
+  color: white !important;
+  fill: white !important;
 }
 
-.nav-links a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
+/* Hover suave */
+.sidenav .mat-mdc-list-item:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
 }
 
-/* 🔹 Estilos responsivos */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 56px; /* altura del toolbar */
-    left: 0;
-    right: 0;
-    background-color: #00527C;
-    padding: 12px 0;
-    margin: 0;
-  }
-
-  .nav-links.open {
-    display: flex;
-    align-items: center;
-  }
-
-  .menu-button {
-    display: inline-flex;
-  }
-}
-
-/* 🔹 Contenido principal */
-.main-content {
-  padding: 20px;
-  background-color: white;
-  min-height: calc(100vh - 64px);
+/* Activo */
+.sidenav .mat-mdc-list-item.active,
+.sidenav .mat-mdc-list-item.active .mdc-list-item__primary-text {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  font-weight: 600 !important;
+  color: white !important;
 }

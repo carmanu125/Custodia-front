@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { VigenciaDto } from '../models/vigencia-dto.dto';
+import { RouterConstants } from '../../../core/constants/router.constast';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { VigenciaDto } from '../models/vigencia-dto.dto';
 export class Vigencia {
 
   // Ajusta la URL según tu backend en .NET
-  private apiUrl = 'https://localhost:7071/api/vigencias';
+  private apiUrl = RouterConstants.ROUTER_BASE + RouterConstants.ROUTER_VIGENCIA;
 
   constructor(private http: HttpClient) {}
 

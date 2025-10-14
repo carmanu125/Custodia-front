@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  background-color: #ffffff;
+}
+
+.sidenav-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Barra superior fija */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 64px;
+  background: #00527C;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+/* Menu lateral */
+.sidenav {
+  width: 220px;
+  background: #00527C;
+  color: white;
+  margin-top: 64px;   /* debajo de la topbar */
+  margin-bottom: 48px; /* encima del footer */
+}
+
+/* Items del menú */
+.mat-nav-list a {
+  color: white;
+}
+
+.mat-nav-list a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Contenido */
+.main-content {
+  flex: 1;
+  padding: 1rem;
+  background: #f4f6f9;
+  margin-top: 64px;    /* espacio topbar */
+  margin-bottom: 48px; /* espacio footer */
+}
+
+/* Footer fijo */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: #00527C;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+
+.sidenav .mat-mdc-list-item {
+  color: white !important;
+}
+
+.sidenav .mat-mdc-list-item .mat-icon,
+.sidenav .mat-mdc-list-item .mdc-list-item__primary-text {
+  color: white !important;
+  fill: white !important;
+}
