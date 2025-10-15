@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -17,7 +17,7 @@ import { AnaquelDto } from '../../../anaquel/models/anaquel.dto';
 @Component({
   selector: 'app-create-caja',
   standalone: true,
-  imports: [
+  imports: [RouterModule,
     CommonModule,
     ReactiveFormsModule,
     MatToolbarModule,

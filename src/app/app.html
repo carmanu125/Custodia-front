@@ -23,34 +23,34 @@
       </a>
 
       <a mat-list-item routerLink="/anaqueles" routerLinkActive="active">
-        <mat-icon>add_circle</mat-icon>
+        <mat-icon>dashboard</mat-icon>
         <span>Anaqueles</span>
       </a>
       <a mat-list-item routerLink="/cajas" routerLinkActive="active">
-        <mat-icon>business</mat-icon>
+        <mat-icon>all_inbox</mat-icon>
         @if(menuOpen){
         <span>Cajas</span>
+
+        }
+      </a>
+      <a mat-list-item routerLink="/dependencias" routerLinkActive="active">
+        <mat-icon>business</mat-icon>
+        @if(menuOpen){
+        <span>Dependencias</span>
+
+        }
+      </a>
+      <a mat-list-item>
+        <mat-icon>folder</mat-icon>
+        @if(menuOpen){
+        <span>Contratos</span>
 
         }
       </a>
       <a mat-list-item>
         <mat-icon>article</mat-icon>
         @if(menuOpen){
-        <span>Documentos</span>
-
-        }
-      </a>
-      <a mat-list-item>
-        <mat-icon>mail</mat-icon>
-        @if(menuOpen){
-        <span>Mensajes</span>
-
-        }
-      </a>
-      <a mat-list-item>
-        <mat-icon>help</mat-icon>
-        @if(menuOpen){
-        <span>Consultas</span>
+        <span>Folios</span>
 
         }
       </a>

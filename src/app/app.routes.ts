@@ -5,6 +5,8 @@ import { ListAnaquel } from './features/anaquel/pages/list-anaquel/list-anaquel'
 import { CreateAnaquel } from './features/anaquel/pages/create-anaquel/create-anaquel';
 import { ListCajas } from './features/cajas/pages/list-cajas/list-cajas';
 import { CreateCaja } from './features/cajas/pages/create-caja/create-caja';
+import { ListDependencia } from './features/dependencia/pages/list-dependencia/list-dependencia';
+import { CreateDependencia } from './features/dependencia/pages/create-dependencia/create-dependencia';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/vigencias/create', pathMatch: 'full' }, // 👈 ruta base
@@ -13,5 +15,7 @@ export const routes: Routes = [
     { path: 'anaqueles', component: ListAnaquel },
     { path: 'anaqueles/create', component: CreateAnaquel },
     { path: 'cajas', component: ListCajas },
-    { path: 'cajas/create', component: CreateCaja }
+    { path: 'cajas/create', component: CreateCaja },
+    { path: 'dependencias', component: ListDependencia },
+    { path: 'dependencias/create', component: CreateDependencia }
 ];

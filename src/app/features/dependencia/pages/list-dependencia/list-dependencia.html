@@ -1,0 +1,40 @@
+<mat-card class="vigencias-card">
+  <mat-toolbar color="primary" class="vigencias-toolbar">
+    <span>Listado de dependencias</span>
+    <span class="spacer"></span>
+    <button mat-icon-button color="accent" aria-label="Agregar nueva dependencia" routerLink="/dependencias/create">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <div class="mat-elevation-z2">
+    <table mat-table [dataSource]="vigencias" class="mat-elevation-z2 full-width">
+
+      <!-- Columna ID -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let v">{{ v.Id }}</td>
+      </ng-container>
+
+      <!-- Columna Año -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef>nombre</th>
+        <td mat-cell *matCellDef="let v">{{ v.Nombre }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="observaciones">
+        <th mat-header-cell *matHeaderCellDef>Observaciones</th>
+        <td mat-cell *matCellDef="let v">{{ v.Observaciones }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="cajaId">
+        <th mat-header-cell *matHeaderCellDef>CajaId</th>
+        <td mat-cell *matCellDef="let v">{{ v.CajaId }}</td>
+      </ng-container>
+
+      <!-- Filas -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</mat-card>
