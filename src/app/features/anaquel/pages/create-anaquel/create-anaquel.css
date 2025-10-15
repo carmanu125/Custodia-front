@@ -1,24 +1,29 @@
-.form-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
+.vigencias-card {
+  margin: 20px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.anaquel-card {
-  width: 100%;
-  max-width: 500px;
-  padding: 1rem;
+.vigencias-toolbar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .full-width {
   width: 100%;
-  margin-bottom: 1rem;
 }
 
-.button-container {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
+.mat-header-cell {
+  font-weight: 600;
+  color: #424242;
+}
+
+.mat-cell, .mat-header-cell {
+  padding: 12px 16px;
+}
+
+.mat-row:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  transition: background-color 0.2s ease-in-out;
 }
 
 .spacer {

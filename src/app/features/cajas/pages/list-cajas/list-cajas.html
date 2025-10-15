@@ -1,1 +1,35 @@
-<p>list-cajas works!</p>
+<mat-card class="vigencias-card">
+  <mat-toolbar color="primary" class="vigencias-toolbar">
+    <span>Listado de Cajas</span>
+    <span class="spacer"></span>
+    <button mat-icon-button color="accent" aria-label="Agregar nueva Caja" routerLink="/cajas/create">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <div class="mat-elevation-z2">
+    <table mat-table [dataSource]="vigencias" class="mat-elevation-z2 full-width">
+
+      <!-- Columna ID -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let v">{{ v.Id }}</td>
+      </ng-container>
+
+      <!-- Columna Año -->
+      <ng-container matColumnDef="codigo">
+        <th mat-header-cell *matHeaderCellDef>Codigo</th>
+        <td mat-cell *matCellDef="let v">{{ v.Codigo }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="anaquelId">
+        <th mat-header-cell *matHeaderCellDef>AnaquelId</th>
+        <td mat-cell *matCellDef="let v">{{ v.AnaquelId }}</td>
+      </ng-container>
+
+      <!-- Filas -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</mat-card>
