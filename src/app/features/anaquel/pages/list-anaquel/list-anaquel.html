@@ -1,0 +1,36 @@
+<mat-card class="vigencias-card">
+  <mat-toolbar color="primary" class="vigencias-toolbar">
+    <span>Listado de Anaqueles</span>
+    <span class="spacer"></span>
+    <button mat-icon-button color="accent" aria-label="Agregar nuevo Anaquel" routerLink="/anaqueles/create">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <div class="mat-elevation-z2">
+    <table mat-table [dataSource]="vigencias" class="mat-elevation-z2 full-width">
+
+      <!-- Columna ID -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let v">{{ v.Id }}</td>
+      </ng-container>
+
+      <!-- Columna Año -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let v">{{ v.Nombre }}</td>
+      </ng-container>
+
+      <!-- Columna Año -->
+      <ng-container matColumnDef="vigenciaId">
+        <th mat-header-cell *matHeaderCellDef>Vigencia</th>
+        <td mat-cell *matCellDef="let v">{{ v.VigenciaId }}</td>
+      </ng-container>
+
+      <!-- Filas -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</mat-card>
