@@ -1,6 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
   <!-- Menú lateral -->
-  <mat-sidenav #sidenav mode="side" [(opened)]="menuOpen" class="sidenav" [fixedInViewport]="true">
+  <mat-sidenav style="border-radius: 0px !important;" #sidenav mode="side" [(opened)]="menuOpen" class="sidenav" [fixedInViewport]="true">
     <div class="sidebar-header">
       <mat-icon>description</mat-icon>
       @if(menuOpen){
@@ -40,7 +40,7 @@
 
         }
       </a>
-      <a mat-list-item>
+      <a mat-list-item routerLink="/contratos" routerLinkActive="active">
         <mat-icon>folder</mat-icon>
         @if(menuOpen){
         <span>Contratos</span>

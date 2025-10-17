@@ -7,6 +7,8 @@ import { ListCajas } from './features/cajas/pages/list-cajas/list-cajas';
 import { CreateCaja } from './features/cajas/pages/create-caja/create-caja';
 import { ListDependencia } from './features/dependencia/pages/list-dependencia/list-dependencia';
 import { CreateDependencia } from './features/dependencia/pages/create-dependencia/create-dependencia';
+import { ListContrato } from './features/contrato/pages/list-contrato/list-contrato';
+import { CreateContrato } from './features/contrato/pages/create-contrato/create-contrato';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/vigencias/create', pathMatch: 'full' }, // 👈 ruta base
@@ -17,5 +19,7 @@ export const routes: Routes = [
     { path: 'cajas', component: ListCajas },
     { path: 'cajas/create', component: CreateCaja },
     { path: 'dependencias', component: ListDependencia },
-    { path: 'dependencias/create', component: CreateDependencia }
+    { path: 'dependencias/create', component: CreateDependencia },
+    { path: 'contratos', component: ListContrato },
+    { path: 'contratos/create', component: CreateContrato }
 ];
